@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'airstreamregular';
+    src: url('fonts/Airstream-webfont.eot');
+    src: url('fonts/Airstream-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Airstream-webfont.woff') format('woff'),
+    url('fonts/Airstream-webfont.ttf') format('truetype'),
+    url('fonts/Airstream-webfont.svg#airstreamregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   } 
+
+@font-face {
+    font-family: 'lakeshore';
+    src: url('fonts/LAKESHOR-webfont.eot');
+    src: url('fonts/LAKESHOR-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/LAKESHOR-webfont.woff') format('woff'),
+    url('fonts/LAKESHOR-webfont.ttf') format('truetype'),
+    url('fonts/LAKESHOR-webfont.svg#lakeshore') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   } 
+/* 引用fonts文件夹的全部字体 */
+
+html, body {
+    height: 100%;
+   } 
+/* 允许内容填满浏览器或设备窗口 */
+
+body {
+    display: flex;
+    /* 将body转化成flex容器 */
+    flex-direction: column;
+    font-size: 10px;
+    background: rgb(149, 194, 215);
+   }
+   /* 将body元素的font=size设置为10px */
+
+a {
+    text-decoration: none;
+}
+/* 移除所有<a>元素的下划线 */
+
+.main-header {
+    flex: 0 1 auto;
+   }
+/* 为顶部空间设置一份空间，只会占据刚好够用的空间 */
+
+.logo-text {
+    background: white;
+    text-align: center;
+    /* 文本居中 */
+    text-transform: uppercase;
+    /* 文字大写 */
+    font-size: 37px;
+    font-family: lakeshore;
+    /* 把字体设置为引用的LAKESHOR字体 */
+   }
+
+.main-content {
+    flex: 1 1 auto;
+    /* 为内容空间设置一份空间，尽可能拉伸 */
+    display: flex;
+    flex-direction: column;
+   }
+
+
+
+/* .thumbnail-item + .thumbnail-item {
+    margin-top: 10px;
+   }  */
+   /* 选中所有紧邻.thumbnail-item之后的.thumbnail-item,属于关系选择器中的相邻兄弟选择器 */
+
+.thumbnail-item {
+    /* display: block; */
+    display: inline-block;
+    /* width: 120px; */
+    /* 限定缩略图每项宽度，并水平排成一行 */
+    min-width: 120px;
+    max-width: 120px;
+    border: 1px solid rgb(100%, 100%, 100%);
+    border: 1px solid rgba(100%, 100%, 100%, 0.8);
+    /* 这里两条是因为有些浏览器支持rgb（第一行），有些支持rgba（第二行），为了保证都可用 */
+   } 
+
+   #barry-otter {
+    background: green;
+   } 
+/* 把id为barry-otter的对象设置为绿色背景 */
+
+.thumbnail-list {
+    flex: 0 1 auto;
+    order: 2;
+    /* 将该flex项目放在其他order值更小的元素后面，order值默认为0  */
+    display: flex;
+    justify-content: space-between;
+    /* justify-content属性决定flex容器如何控制flex项目在主轴方向上的绘制方式，保证每个flex项目之间的空隙是相等的。 */
+    list-style: none;
+    padding: 0;
+    /* 去掉黑点，并去掉从默认样式继承的padding */
+    white-space: nowrap;
+    overflow-x: auto;
+    /* 禁止换行并允许滚动 */
+   } 
+
+.thumbnail-image {
+    display: block;
+    width: 100%;
+   }
+   /* 图片自适应窗口，将display属性设置为block就可移除图片和其他元素之间的空白，*/
+.thumbnail-title {
+    display: block;
+    margin: 0;
+    padding: 4px 10px;
+    background:rgb(96, 125, 139);
+    color: rgb(202, 238, 255);
+    font-size: 18px;
+   }
+   /* 为类名为thumbnail-title的类添加样式 */
+
+.detail-image-container {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    /* 在主轴居中 */
+    align-items: center;
+    /* 在侧轴居中 */
+   }
+
+.detail-image-frame {
+    position: relative;
+    /* 既要保证在常规文档流，又要作为绝对定位的容器 */
+    text-align: center;
+   } 
+/* 水平居中 */
+.detail-image {
+    width: 90%;
+   } 
+
+.detail-image-title {
+    position: absolute;
+    bottom: -16px;
+    left: 4px;
+    /* 设置绝对位置 */
+    font-family: airstreamregular;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
+    /* 添加文本阴影 */
+    font-size: 40px;
+   } 
